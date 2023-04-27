@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+}
+.board-row{
+    display: flex;
+    justify-content: center;
+}
+
+.signBox,.signBox1{
+    border: 1px solid;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
