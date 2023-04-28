@@ -6,11 +6,19 @@ body{
     justify-content: center;
 }
 
-.signBox,.signBox1{
+.signBox{
     border: 1px solid;
     height: 100px;
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+
+.playerXTurn{
+    color: red;
+}
+.playerOTurn{
+    color: blue;
 }

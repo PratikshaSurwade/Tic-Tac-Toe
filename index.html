@@ -13,7 +13,10 @@
 </head>
 <body>
     <h1>Tic-Tac-Toe</h1>
-    <p>Player <span class="playerTurn">X</span> Turn</p>
+    <button onclick="resetGame()">ResetGame</button>
+    <p id="PlayerTurned">Player <span class="playerTurn">X</span> Turn</p>
+    <p id="winnerIs"></p>
+
     <div class="board-row">
         <div class="signBox" onclick="buttonClick(0)" id="0"></div>
 
@@ -32,7 +35,6 @@
         <div class="signBox" onclick="buttonClick(7)" id="7"></div>
         <div class="signBox" onclick="buttonClick(8)" id="8"></div>
     </div>
-    <p>This paragraph is also a part of HTML.</p>
 
     <script src="index.js"></script>
 
