@@ -1,8 +1,7 @@
-
-
 const boardItems = new Array(9).fill(null);
 var isXTurn = true;
 let Winner;
+let isDraw;
 
 function winnerDeclaration() {
     const winnerIs = [
@@ -47,15 +46,36 @@ function resetGame(){
     isXTurn=true;
 }
 
+function isMatchedDraw() {
+      //draw
+    //           (steps != null) ? console.log("true") : console.log("false")
+
+    // boardItems.map((steps)=> (
+    //     (steps != null) ? console.log("true") : console.log("false")
+    // ))
+    
+    // for (let i = 0; i < 9; i++) {
+    //     console.log(        document.getElementById(i).innerHTML,"sdsdasda")
+
+    // }
+
+    let draw = boardItems.includes(null);
+    if(!draw){
+        document.getElementById("PlayerTurned").style.display = "none";
+        document.getElementById("winnerIs").innerHTML = `Matched is Draw`;
+    }
+}
 function buttonClick(e){
     console.log("button is clicked" ,e);
 
     const value = document.getElementById(e).innerHTML;
     console.log("E",e,"value",value);
 
-    if(value || Winner){
+    if(value || Winner || isDraw){
+        console.log("returning")
         return
     }
+
 
     boardItems[e] = isXTurn ? "X" : "O" ;
 
@@ -71,13 +91,19 @@ function buttonClick(e){
     // isXTurn ? document.getElementById(e).innerHTML="X" : document.getElementById(e).innerHTML="0";
     // isXTurn ? document.querySelector(".playerTurn").innerHTML="X" :  document.querySelector(".playerTurn").innerHTML="O";
     isXTurn= (!isXTurn);
+
+    //draw
 boardItems.map((steps)=> (
-    console.log(steps)
+    console.log(steps) //check how to find ki array madhunn sev elements null nahiy n and nahi zale ki draww
 ))
+
+//winner
     Winner = winnerDeclaration(e);
     if(Winner){
         // document.getElementById("winnerIs").innerHTML = `Player <span class=(${Winner}="X")?"playerXTurn":"playerOTurn">${Winner}</span> is Winner`;
         document.getElementById("winnerIs").innerHTML = `Player <span id="winnerName">${Winner}</span> is Winner`;
         (Winner==="X")? document.getElementById("winnerName").classList.add("playerXTurn") : (document.getElementById("winnerName").classList.add("playerOTurn"))
     }
+    isDraw = isMatchedDraw();
+
 }
