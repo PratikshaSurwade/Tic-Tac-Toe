@@ -1,5 +1,7 @@
 body{
     text-align: center;
+    /* font-family: 'Cabin', sans-serif; */
+font-family: 'IBM Plex Sans', sans-serif;
 }
 .board-row{
     display: flex;
@@ -21,4 +23,14 @@ body{
 }
 .playerOTurn{
     color: blue;
+}
+
+.resetButton{
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    right: 20%;
+    cursor: pointer;
+    padding: 5px;
 }
