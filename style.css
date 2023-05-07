@@ -16,6 +16,7 @@ font-family: 'IBM Plex Sans', sans-serif;
     justify-content: center;
     align-items: center;
     font-weight: 800;
+    cursor: pointer;
 }
 
 .playerXTurn{
@@ -71,4 +72,17 @@ font-family: 'IBM Plex Sans', sans-serif;
     font-weight: bolder;
     font-size: large;
     margin: 0.5rem;
+}
+@media only  screen and (max-width:480px){
+    .resetButton{
+        display: block;
+        margin: auto;
+        position: static;
+        margin-top: 0.5rem;
+    }
+}
+@media only  screen and (max-width:769px){
+    .resetButton{
+        right:10px;
+    }
 }
