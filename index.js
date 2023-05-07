@@ -3,7 +3,7 @@ var isXTurn = true;
 let Winner;
 let isDraw;
 
-isXTurn ? document.querySelector(".playerTurn").classList.add("playerXTurn") : document.querySelector(".playerTurn").classList.add("playerOTurn")
+isXTurn ? document.querySelector(".playerTurn").classList.add("playerXTurn") : document.querySelector(".playerTurn").classList.add("playerOTurn").remove("playerXTurn")
 
 
 function winnerDeclaration() {
@@ -31,22 +31,23 @@ function winnerDeclaration() {
 }
 
 function resetGame(){
-    // boardItems.fill(null);
+    closeNav();
 
-    // for (let i = 0; i < 9; i++) {
-    //     document.getElementById(i).innerHTML="";
-    //     document.getElementById(i).classList.remove("playerXTurn","playerOTurn")
-    // }
-    // document.getElementById("PlayerTurned").style.display = "block";
-    // document.getElementById("winnerIs").innerHTML="";
+    boardItems.fill(null);
+
+    for (let i = 0; i < 9; i++) {
+        document.getElementById(i).innerHTML="";
+        document.getElementById(i).classList.remove("playerXTurn","playerOTurn")
+    }
+    document.getElementById("PlayerTurned").style.display = "block";
+    document.getElementById("winnerIs").innerHTML="";
+    Winner= false;
     
-    // document.querySelector(".playerTurn").innerHTML="X";
-    // document.querySelector(".playerTurn").classList.add("playerXTurn")
-    // document.querySelector(".playerTurn").classList.remove("playerOTurn")
+    document.querySelector(".playerTurn").innerHTML="X";
+    document.querySelector(".playerTurn").classList.add("playerXTurn")
+    document.querySelector(".playerTurn").classList.remove("playerOTurn")
 
-    // isXTurn=true;
-    location.reload();
-
+    isXTurn=true;
 
 }
 
@@ -93,12 +94,23 @@ function buttonClick(e){
     //To check for Winner
 
     Winner = winnerDeclaration(e);
+    console.log(Winner)
     if(Winner){
         document.getElementById("winnerIs").innerHTML = `Player <span id="winnerName">${Winner}</span> is Winner`;
         (Winner==="X")? document.getElementById("winnerName").classList.add("playerXTurn") : (document.getElementById("winnerName").classList.add("playerOTurn"))
+        document.getElementById("win").innerHTML=Winner;
+        openNav();
     }
 
     //Checking for Draw
     isDraw = isMatchedDraw();
     
+}
+
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+  
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
 }
