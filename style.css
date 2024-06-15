@@ -1,8 +1,8 @@
 body{
     text-align: center;
-    /* font-family: 'Cabin', sans-serif; */
-font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
+
 .board-row{
     display: flex;
     justify-content: center;
@@ -22,6 +22,7 @@ font-family: 'IBM Plex Sans', sans-serif;
 .playerXTurn{
     color: red;
 }
+
 .playerOTurn{
     color: blue;
 }
@@ -43,13 +44,12 @@ font-family: 'IBM Plex Sans', sans-serif;
     z-index: 1;
     top: 0;
     left: 0;
-    /* background-color: rgb(0,0,0); */
     background-color: rgba(0,0,0, 0.9);
     overflow-y: hidden;
     transition: 0.5s;
   }
   
-  .overlay-content {
+.overlay-content {
     color: white;
     position: relative;
     top: 25%;
@@ -59,7 +59,7 @@ font-family: 'IBM Plex Sans', sans-serif;
     margin-top: 30px;
   }
 
-  .overlay .closebtn {
+.overlay .closebtn {
     position: absolute;
     top: 10%;
     right: 10%;
@@ -73,6 +73,7 @@ font-family: 'IBM Plex Sans', sans-serif;
     font-size: large;
     margin: 0.5rem;
 }
+
 @media only  screen and (max-width:480px){
     .resetButton{
         display: block;
@@ -81,6 +82,7 @@ font-family: 'IBM Plex Sans', sans-serif;
         margin-top: 0.5rem;
     }
 }
+
 @media only  screen and (max-width:769px){
     .resetButton{
         right:10px;
